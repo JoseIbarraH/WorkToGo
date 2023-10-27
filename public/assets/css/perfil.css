@@ -1,0 +1,11 @@
+.butn {
+    text-align: start;
+    width: 100%; 
+    border-radius: 5px; 
+    height: 40px;
+}
+
+.butn:hover {
+    background-color: rgb(216, 216, 216);
+    height: 45px;
+}
