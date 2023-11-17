@@ -1,0 +1,13 @@
+.over {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    max-width: 150px;
+}
+
+.cartas {
+    display: grid;
+    grid-gap: 1rem; 
+    grid-template-columns: 25% 25% 25% 25%; 
+    grid-template-rows: auto auto;
+}

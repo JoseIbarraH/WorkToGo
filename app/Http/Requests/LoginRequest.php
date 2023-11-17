@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Auth;
 use \Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LoginRequest extends FormRequest
 {
@@ -39,7 +40,8 @@ class LoginRequest extends FormRequest
         if($this->isEmail($username)){
             return[
                 'email' => $username,
-                'password' => $this->get('password')
+                'password' => $this->get('password'),
+                
             ];
         }
         return $this->only('username','password');
@@ -50,5 +52,12 @@ class LoginRequest extends FormRequest
         return !$factory->make(['username'=> $value],['username' => 'email'])->fails();
     }
 
+
+    public function messages(){
+        return [
+            'username.required' => 'Ingrese un username o correo.',
+            'password.required' => 'Ingrese la contraseña.',
+        ];
+    }
 
 }

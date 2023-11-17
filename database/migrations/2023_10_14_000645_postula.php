@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('postula', function(Blueprint $table){
+        Schema::create('postulas', function(Blueprint $table){
             $table->id();
+            $table->string('estado')->default('Activo');
+            $table->string('sugerido');
+            $table->timestamps();
             $table->unsignedBigInteger('id_trabajador');
-            $table->foreign('id_trabajador')->references('id')->on('trabajador');
+            $table->foreign('id_trabajador')->references('codigoTrabajador')->on('trabajadors');
             $table->unsignedBigInteger('id_servicio');
-            $table->foreign('id_servicio')->references('id')->on('servicio');
+            $table->foreign('id_servicio')->references('id')->on('servicios');
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('postula');
+        Schema::dropIfExists('postulas');
     }
 };

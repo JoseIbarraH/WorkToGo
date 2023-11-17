@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTWORK</title>
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
-    
+    <link rel="stylesheet" href="{{url('assets/css/slider.css')}}">
+
 
 </head>
 <body>
     @include('layouts\partials\navbar')
-    <main class="container">
+    <div class="container">
         @yield('content')
-    </main>
+    </div>
 
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
 </body>

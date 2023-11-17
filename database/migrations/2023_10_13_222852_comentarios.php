@@ -15,8 +15,9 @@ return new class extends Migration
             $table -> id();
             $table -> string ('texto');
             $table->string('estado');
+            $table->timestamps();
             $table->unsignedBigInteger('id_pqr');
-            $table->foreign('id_pqr')->references('id')->on('pqr');
+            $table->foreign('id_pqr')->references('id')->on('pqrs');
         });
     }
 

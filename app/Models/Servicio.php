@@ -12,6 +12,7 @@ class Servicio extends Model
 
     protected $fillable = [
         'titulo',
+        'direccion',
         'descripcion',
         'fechaPublicacion',
         'tipoServicio',

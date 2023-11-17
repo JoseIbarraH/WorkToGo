@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    @include('layouts\partials\navbar')
+    @include('layouts\partials\navbar2')
     <main class="container">
         @yield('content')
     </main>

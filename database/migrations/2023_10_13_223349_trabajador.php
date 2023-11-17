@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trabajador', function(Blueprint $table){
-            $table->id();
-            $table->string('codigoTrabajador')->unique();
-            $table->string('estado');
+        Schema::create('trabajadors', function(Blueprint $table){
+            $table->bigIncrements('codigoTrabajador');
+            $table->string('estado')->default('Activo');
+            $table->timestamps();
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trabajador');
+        Schema::dropIfExists('trabajadors');
     }
 };

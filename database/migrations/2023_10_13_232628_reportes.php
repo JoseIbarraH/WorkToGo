@@ -17,12 +17,13 @@ return new class extends Migration
             $table->text('descripcion');
             $table->date('fechaCreacion');
             $table->string('estado');
+            $table->timestamps();
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
             $table->unsignedBigInteger('id_servicio');
-            $table->foreign('id_servicio')->references('id')->on('servicio');
-            $table->unsignedBigInteger('id_administrador');
-            $table->foreign('id_administrador')->references('id')->on('administrador');
+            $table->foreign('id_servicio')->references('id')->on('servicios');
+            $table->unsignedBigInteger('id_administrador')->nullable();
+            $table->foreign('id_administrador')->references('id')->on('administradors');
         });
     }
 

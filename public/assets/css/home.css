@@ -1,0 +1,24 @@
+.console-container {
+
+    font-family: 'Titillium Web';
+    font-size: 4em;
+    text-align: left;
+    height: 200px;
+    width: 600px;
+    display: block;
+    position: absolute;
+    color: rgb(31, 27, 27);
+    top: -40%;
+    bottom: 0;
+    left: 0;
+    right: 40%;
+    margin: auto;
+}
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+
+}

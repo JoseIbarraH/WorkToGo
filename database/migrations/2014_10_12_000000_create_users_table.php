@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -18,6 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('username')->unique();
             $table->string('celular')->unique();
+            $table->string('genero');
+            $table->string('tipo')->default('Cliente');
             $table->string('estado')->default('Activo');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -25,6 +29,17 @@ return new class extends Migration
             $table->timestamps();
             $table->string('service')->default('Inactivo');
         });
+
+        DB::table('users')->insert([
+            'nombre' => 'Jose Carlos Ibarra Herrera',
+            'cedula' => '1007260280',
+            'email' => 'jcibarrah1423@gmail.com',
+            'username' => 'jose',
+            'celular' => '3164749242',
+            'genero' => 'Masculino',
+            'tipo' => 'Administrador',
+            'password' => Hash::make('123456789'),
+        ]);
     }
 
     /**

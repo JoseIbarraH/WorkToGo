@@ -28,8 +28,27 @@ class RegisterRequest extends FormRequest
             'username' => 'required',
             'cedula' => 'required',
             'celular' => 'required',
+            'genero' => 'required',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|same:password',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'cedula.required' => 'Por favor, ingrese la cédula del usuario.',
+            'cedula.unique' => 'La cédula proporcionada ya ha sido registrada en nuestro sistema.',
+            'nombre.required' => 'Por favor, ingrese el nombre del usuario.',
+            'username.required' => 'Por favor, ingrese un username.',
+            'celular.required' => 'Por favor, ingrese un numero de telefono.',
+            'apellido.required' => 'Por favor, ingrese el apellido del usuario.',
+            'email.required' => 'Por favor, ingrese una dirección de correo electrónico válida.',
+            'email.unique' => 'La dirección de correo electrónico proporcionada ya ha sido registrada en nuestro sistema.',
+            'password.required' => 'Por favor, ingrese una contraseña segura.',
+            'password.min' => 'La contraseña debe contener al menos :min caracteres.',
+            'password_confirmation.required' => 'Por favor, confirme la contraseña ingresada.',
+            'password_confirmation.same' => 'Las contraseñas ingresadas no coinciden.'
         ];
     }
 }

@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pqr', function(Blueprint $table){
+        Schema::create('pqrs', function(Blueprint $table){
             $table -> id();
             $table -> string ('titulo');
             $table -> string ('tipo');
             $table -> string ('descripcion');
             $table -> date ('fechaCreacion');
             $table -> string ('estado');
-            $table -> string ('respuesta');
-            $table -> string ('fechaResolucion');
+            $table -> string ('respuesta')->nullable();
+            $table -> date ('fechaResolucion')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pqr');
+        Schema::dropIfExists('pqrs');
     }
 };

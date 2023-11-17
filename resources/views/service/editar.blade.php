@@ -1,6 +1,9 @@
-@extends('layouts\app-master-2')
-@section('content')
+@extends('layouts\app-master')
 
+
+@section('content')
+<link rel="stylesheet" href="{{ url('assets/css/nav.css') }}">
+<br><br><br><br><br>
 <div class="col-2 mt-2" style="width: 40%; height: auto;">
     <div class="card p-3 mb-5" style="width: 450px">
         <div class="card-text">
@@ -35,6 +38,12 @@
                             <option value="Otro" {{$servicio->tipoServicio == 'Otro' ? 'selected' : ''}}>Otro</option>
                         </select>
                     </div>
+                </div>
+
+                <!-- Direccion del trabajo -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Direccion: </label>
+                    <input type="text" required class="form-control" placeholder="Direccion" name="direccion" value="{{ $servicio->direccion }}">
                 </div>
 
                 <!-- Descripcion del trabajo -->
